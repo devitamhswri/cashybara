@@ -47,7 +47,6 @@ class HomeScreen extends StatelessWidget {
                 double inputAmount = double.tryParse(amountController.text) ?? 0;
                 
                 if (inputAmount > 0) {
-                  // MEMANGGIL PROVIDER UNTUK SIMPAN DATA
                   Provider.of<TransactionProvider>(context, listen: false)
                       .addTransaction(title, inputAmount, icon);
 
@@ -84,7 +83,7 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const SizedBox(width: 40),
+                  const SizedBox(width: 40), 
                   const Row(
                     children: [
                       Icon(Icons.chevron_left, size: 24),
@@ -100,13 +99,15 @@ class HomeScreen extends StatelessWidget {
                   CircleAvatar(
                     radius: 20,
                     backgroundColor: Colors.grey.shade200,
+                    backgroundImage: const AssetImage('assets/capybara_profile.png'),
+                    onBackgroundImageError: (exception, stackTrace) {},
                     child: const Icon(Icons.person, color: Colors.grey),
                   ),
                 ],
               ),
               const SizedBox(height: 24),
 
-              // --- RINGKASAN PENGELUARAN (OTOMATIS UPDATE) ---
+              // --- RINGKASAN PENGELUARAN ---
               Consumer<TransactionProvider>(
                 builder: (context, transProvider, child) {
                   return RichText(
@@ -154,18 +155,30 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 32),
 
-              // --- INCOME SECTION (CARD COKELAT) ---
               const Text(
                 'Total Pendapatan',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 16),
-              // IncomeCard sekarang juga harus menggunakan Consumer di dalamnya
               const IncomeCard(),
               const SizedBox(height: 24),
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
+        selectedItemColor: const Color(0xFF41241A),
+        unselectedItemColor: Colors.grey,
+        selectedFontSize: 10,
+        unselectedFontSize: 10,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'Beranda'),
+          BottomNavigationBarItem(icon: Icon(Icons.receipt_long_outlined), label: 'Transaksi'),
+          BottomNavigationBarItem(icon: Icon(Icons.account_balance_wallet_outlined), label: 'Budget'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings_outlined), label: 'Pengaturan'),
+        ],
       ),
     );
   }
@@ -178,7 +191,6 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: bg,
         iconBackgroundColor: iconBg,
         imagePath: img,
-        // NILAI RP DI BAWAH IKON JADI DINAMIS
         amount: 'Rp${_getTotalByCategory(provider, title).toInt()}',
       ),
     );

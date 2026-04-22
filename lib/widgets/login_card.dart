@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../main.dart'; // IMPORT INI WAJIB biar MainNavigation kebaca
+import '../main.dart'; // Import ini wajib supaya MainNavigation terbaca
 import 'custom_text_field.dart';
 
 class LoginCard extends StatelessWidget {
@@ -49,13 +49,13 @@ class LoginCard extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           
-          // --- BAGIAN TOMBOL LOGIN YANG SUDAH DIPERBAIKI ---
+          // Tombol Login
           SizedBox(
             width: double.infinity,
             height: 50,
             child: ElevatedButton(
               onPressed: () {
-                // SEKARANG PINDAH KE MainNavigation, BUKAN HomeScreen
+                // Berpindah ke MainNavigation agar Navbar muncul
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const MainNavigation()),
@@ -78,7 +78,6 @@ class LoginCard extends StatelessWidget {
               ),
             ),
           ),
-          // ------------------------------------------------
           
           const SizedBox(height: 24),
           Text(

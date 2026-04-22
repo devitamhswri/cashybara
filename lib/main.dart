@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:cashybara/providers/transaction_provider.dart';
-// Import screen yang sudah kamu buat
 import 'package:cashybara/screens/login_screen.dart';
 import 'package:cashybara/screens/transaction_screen.dart';
-import 'package:cashybara/screens/home_screen.dart'; // Pastikan path ini benar
+import 'package:cashybara/screens/home_screen.dart';
 
 void main() {
   runApp(
@@ -33,13 +32,13 @@ class CashyBaraApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      // Arahkan ke Login dulu, nanti dari Login pakai Navigator ke MainNavigation
+      // Aplikasi dimulai dari LoginScreen
       home: const LoginScreen(), 
     );
   }
 }
 
-// --- KELAS NAVIGASI UTAMA ---
+// --- KELAS NAVIGASI UTAMA (Setelah Login) ---
 class MainNavigation extends StatefulWidget {
   const MainNavigation({super.key});
 
@@ -50,10 +49,10 @@ class MainNavigation extends StatefulWidget {
 class _MainNavigationState extends State<MainNavigation> {
   int _selectedIndex = 0;
 
-  // Daftar halaman utama CashyBara
+  // Daftar halaman yang diakses lewat Bottom Navbar
   final List<Widget> _pages = [
-    const HomeScreen(),        // Layar Beranda (Layar dengan Kartu Saldo)
-    const TransactionScreen(),  // Layar Riwayat Transaksi
+    const HomeScreen(),        
+    const TransactionScreen(),  
     const Center(child: Text("Halaman Budget")),
     const Center(child: Text("Halaman Pengaturan")),
   ];

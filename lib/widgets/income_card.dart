@@ -37,7 +37,6 @@ class IncomeCard extends StatelessWidget {
                         ),
                       ),
                       const Spacer(),
-                      // Tombol + (Bisa kamu arahkan ke fungsi tambah saldo nanti)
                       Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,

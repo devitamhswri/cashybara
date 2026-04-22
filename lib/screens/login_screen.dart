@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/wavy_header.dart';
 import '../widgets/login_card.dart';
-import '../main.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

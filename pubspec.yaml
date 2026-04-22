@@ -9,9 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  provider: ^6.1.1       # <--- PINDAHKAN KE SINI (Sejajar dengan kata 'flutter')
-  cupertino_icons: ^1.0.8
-  google_fonts: ^8.0.2
+  provider: ^6.1.1 # Harus sejajar dengan kata 'flutter' di atasnya
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -20,6 +19,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
   assets:
     - assets/
