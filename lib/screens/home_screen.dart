@@ -166,20 +166,8 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
-        selectedItemColor: const Color(0xFF41241A),
-        unselectedItemColor: Colors.grey,
-        selectedFontSize: 10,
-        unselectedFontSize: 10,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'Beranda'),
-          BottomNavigationBarItem(icon: Icon(Icons.receipt_long_outlined), label: 'Transaksi'),
-          BottomNavigationBarItem(icon: Icon(Icons.account_balance_wallet_outlined), label: 'Budget'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings_outlined), label: 'Pengaturan'),
-        ],
-      ),
+      // BOTTOM NAVIGATION BAR SUDAH DIHAPUS DARI SINI
+      // Navigasi bawah sekarang dikelola oleh MainNavigation di main.dart
     );
   }
 

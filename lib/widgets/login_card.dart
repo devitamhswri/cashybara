@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../main.dart'; // Import ini wajib supaya MainNavigation terbaca
+import 'package:cashybara/screens/main_screen.dart'; // Import MainScreen secara langsung
 import 'custom_text_field.dart';
 
 class LoginCard extends StatelessWidget {
@@ -55,10 +55,10 @@ class LoginCard extends StatelessWidget {
             height: 50,
             child: ElevatedButton(
               onPressed: () {
-                // Berpindah ke MainNavigation agar Navbar muncul
+                // Berpindah ke MainScreen (Bukan MainNavigation)
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => const MainNavigation()),
+                  MaterialPageRoute(builder: (context) => const MainScreen()),
                 );
               },
               style: ElevatedButton.styleFrom(
